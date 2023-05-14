@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:conecta_santa_cruz/app/modules/home_controller.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_android/webview_flutter_android.dart';
 
 void main() => runApp(WebViewApp());
 
@@ -13,19 +14,25 @@ class WebViewApp extends StatefulWidget {
 }
 
 class _WebViewAppState extends State<WebViewApp> {
-  late final WebViewController controller;
+  late final WebViewController _controller;
 
   @override
   void initState() {
-    controller = WebViewController()
-      ..loadRequest(Uri.parse('https://www.uol.com.br/'));
     super.initState();
+    final WebViewController controller = WebViewController();
+
+    controller
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..loadRequest(Uri.parse('https://ti7383.wixsite.com/appsantacruz'));
+
+    _controller = controller;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebViewWidget(controller: controller),
+      body: WebViewWidget(controller: _controller),
     );
   }
 }
