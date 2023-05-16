@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       initialBinding: HomeBinding(),
-      home: WebViewApp(),
+      home: WebViewExample(),
       getPages: AppPages.pages,
     );
   }
