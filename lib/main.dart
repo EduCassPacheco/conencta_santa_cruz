@@ -1,6 +1,6 @@
+import 'package:conecta_santa_cruz/app/modules/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:conecta_santa_cruz/app/modules/home_binding.dart';
-import 'package:conecta_santa_cruz/app/modules/home_page.dart';
 import 'package:conecta_santa_cruz/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
       initialBinding: HomeBinding(),
-      home: WebViewExample(),
+      home: WebViewApp(),
       getPages: AppPages.pages,
     );
   }

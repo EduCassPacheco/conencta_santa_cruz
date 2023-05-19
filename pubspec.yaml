@@ -18,6 +18,7 @@ dependencies:
   webview_flutter: ^4.2.0
   flutter_native_splash: ^2.2.19
   webview_flutter_android: ^3.7.0
+  back_button_interceptor: ^6.0.2
 flutter_native_splash:
   color: "#ffffff"
   image:  assets/images/logo1.png
