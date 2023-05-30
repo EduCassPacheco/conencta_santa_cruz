@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
@@ -47,6 +50,14 @@ class _WebViewAppState extends State<WebViewApp> {
     return true;
   }
 
+  final dDayLocal = DateTime(2023, 8, 1);
+  final now = DateTime.now();
+  get diaFinal {
+    // print(now);
+    // print(dDayLocal);
+    return (dDayLocal.isAfter(now));
+  }
+
   @override
   Widget build(BuildContext context) {
     // bool shouldPop = true;
@@ -54,10 +65,15 @@ class _WebViewAppState extends State<WebViewApp> {
       onWillPop: _onWillPop,
       child: SafeArea(
         child: Scaffold(
-          body: WebViewWidget(
-            controller: _controller,
-          ),
-        ),
+            body: diaFinal
+                ? WebViewWidget(
+                    controller: _controller,
+                  )
+                : exit(0)
+            // : WebViewWidget(
+            //     controller: _controller,
+            //   ),
+            ),
       ),
     );
   }
