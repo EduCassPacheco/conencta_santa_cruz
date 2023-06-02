@@ -1,4 +1,4 @@
-package com.example.conecta_santa_cruz
+package com.br.conectasantacruz
 
 import io.flutter.embedding.android.FlutterActivity
 

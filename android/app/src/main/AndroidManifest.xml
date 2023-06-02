@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.conecta_santa_cruz">
+    package="com.br.conectasantacruz">
    <application
         android:label="Conecta Santa Cruz"
         android:name="${applicationName}"
